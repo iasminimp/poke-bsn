@@ -1,4 +1,4 @@
-# Desafio – AEVO by Iasmin Marques
+# Desafio – BSN by Iasmin Marques
 
 - Tela principal: Deve exibir o nome e a imagem do Pokémon. O layout fica a seu critério, desde que seja funcional e organizado.
 
