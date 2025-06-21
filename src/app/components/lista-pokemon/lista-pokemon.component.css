@@ -1,0 +1,57 @@
+.busca-input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.pokemon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.pokemon-card {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.pokemon-card img {
+  width: 96px;
+  height: 96px;
+  margin-bottom: 0.5rem;
+}
+
+.pokemon-card button {
+  margin-top: 1rem;
+  background-color: #457b9d;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pokemon-card button:hover {
+  background-color: #1d3557;
+}
+
+.h1 {
+  text-align: center;
+  color: #1f1f1f;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 480px) {
+  .pokemon-card {
+    padding: 0.75rem;
+  }
+
+  .pokemon-card h3 {
+    font-size: 1rem;
+  }
+}

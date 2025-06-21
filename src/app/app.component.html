@@ -1,0 +1,16 @@
+<header class="main-header">
+  <nav class="nav-bar">
+    <a
+      routerLink="/"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >Home</a
+    >
+
+    <a routerLink="/comparar" routerLinkActive="active">Comparar</a>
+  </nav>
+</header>
+
+<main class="main-content">
+  <router-outlet></router-outlet>
+</main>

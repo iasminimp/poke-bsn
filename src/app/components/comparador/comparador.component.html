@@ -1,0 +1,65 @@
+<h1 class="h1">Comparador de Pokémons</h1>
+
+<div class="formulario">
+  <div class="campo">
+    <label>Pokémon 1</label>
+    <input
+      type="text"
+      [(ngModel)]="nomePokemon1"
+      (input)="filtrarPokemon(nomePokemon1, 1)"
+      (blur)="esconderSugestoes(1)"
+      placeholder="Digite o nome do pokémon 1"
+    />
+    <ul class="sugestoes" *ngIf="filtro1.length">
+      <li *ngFor="let p of filtro1" (click)="selecionar(p.name, 1)">
+        {{ p.name }}
+      </li>
+    </ul>
+  </div>
+
+  <div class="campo">
+    <label>Pokémon 2</label>
+    <input
+      type="text"
+      [(ngModel)]="nomePokemon2"
+      (input)="filtrarPokemon(nomePokemon2, 2)"
+      placeholder="Digite o nome do pokémon 2"
+      (blur)="esconderSugestoes(2)"
+    />
+    <ul class="sugestoes" *ngIf="filtro2.length">
+      <li *ngFor="let p of filtro2" (click)="selecionar(p.name, 2)">
+        {{ p.name }}
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="btn-comparar">
+  <button (click)="comparar()">Comparar</button>
+</div>
+
+<p *ngIf="mensagemErro" class="erro">{{ mensagemErro }}</p>
+
+<div *ngIf="detalhesPokemon1 && detalhesPokemon2" class="resultado-final">
+  <h4>{{ compararStatus() }}</h4>
+</div>
+
+<div class="resultado" *ngIf="detalhesPokemon1 && detalhesPokemon2">
+  <div class="card" [ngClass]="{ vencedor: vencedor === 1 }">
+    <img [src]="detalhesPokemon1.sprites.front_default" />
+    <h3>{{ detalhesPokemon1.name }}</h3>
+    <p>
+      <strong>Status Total:</strong>
+      {{ calcularStatusTotal(detalhesPokemon1) }}
+    </p>
+  </div>
+
+  <div class="card" [ngClass]="{ vencedor: vencedor === 2 }">
+    <img [src]="detalhesPokemon2.sprites.front_default" />
+    <h3>{{ detalhesPokemon2.name }}</h3>
+    <p>
+      <strong>Status Total:</strong>
+      {{ calcularStatusTotal(detalhesPokemon2) }}
+    </p>
+  </div>
+</div>
